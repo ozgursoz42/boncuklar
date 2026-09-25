@@ -463,7 +463,7 @@ export default function App() {
   }
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-between p-2.5 sm:p-4 max-w-3xl sm:max-w-4xl lg:max-w-5xl mx-auto text-[#2D3748] relative">
+    <div className="w-full h-[100dvh] max-h-[100dvh] overflow-hidden flex flex-col items-center justify-between p-2 sm:p-3 lg:p-4 max-w-3xl sm:max-w-4xl lg:max-w-5xl mx-auto text-[#2D3748] relative select-none">
       {/* 1. Fullscreen 3D Pixar High-Res Playroom Background */}
       <PlayroomBackground />
 
@@ -508,8 +508,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Unified Vertical Stack of All 4 Main Buttons - Same Dimensions */}
-            <div className="mt-2.5 w-full px-5 max-w-sm flex flex-col gap-2.5">
+            {/* Unified Vertical Stack of All 4 Main Buttons - Auto-Scaling Dimensions */}
+            <div className="mt-2 sm:mt-3 w-full px-4 max-w-xs sm:max-w-sm flex flex-col gap-2 sm:gap-2.5">
               {/* 1. OYNA */}
               <button
                 type="button"
@@ -517,9 +517,9 @@ export default function App() {
                   soundManager.playClick();
                   startLevel(stats.highestUnlockedLevel, false);
                 }}
-                className="w-full h-14 sm:h-16 rounded-3xl text-white font-black text-xl sm:text-2xl btn-game-green tracking-wider uppercase cursor-pointer flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-xl"
+                className="w-full h-12 sm:h-14 md:h-16 rounded-2xl sm:rounded-3xl text-white font-black text-lg sm:text-xl md:text-2xl btn-game-green tracking-wider uppercase cursor-pointer flex items-center justify-center gap-2.5 sm:gap-3 transition-transform active:scale-95 shadow-xl"
               >
-                <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-white stroke-none" />
+                <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 fill-white stroke-none" />
                 <span>OYNA</span>
               </button>
 
@@ -530,9 +530,9 @@ export default function App() {
                   soundManager.playClick();
                   startLevel(stats.highestUnlockedMemoryLevel || 1, true);
                 }}
-                className="w-full h-14 sm:h-16 rounded-3xl text-white font-black text-xl sm:text-2xl btn-game-purple tracking-wider uppercase cursor-pointer flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-xl"
+                className="w-full h-12 sm:h-14 md:h-16 rounded-2xl sm:rounded-3xl text-white font-black text-lg sm:text-xl md:text-2xl btn-game-purple tracking-wider uppercase cursor-pointer flex items-center justify-center gap-2.5 sm:gap-3 transition-transform active:scale-95 shadow-xl"
               >
-                <Brain className="w-7 h-7 sm:w-8 sm:h-8 text-white stroke-[2.5]" />
+                <Brain className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white stroke-[2.5]" />
                 <span>HAFIZA OYUNU</span>
               </button>
 
@@ -543,9 +543,9 @@ export default function App() {
                   soundManager.playClick();
                   setScreen('LEVEL_SELECT');
                 }}
-                className="w-full h-14 sm:h-16 rounded-3xl text-white font-black text-xl sm:text-2xl btn-game-yellow tracking-wider uppercase cursor-pointer flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-xl"
+                className="w-full h-12 sm:h-14 md:h-16 rounded-2xl sm:rounded-3xl text-white font-black text-lg sm:text-xl md:text-2xl btn-game-yellow tracking-wider uppercase cursor-pointer flex items-center justify-center gap-2.5 sm:gap-3 transition-transform active:scale-95 shadow-xl"
               >
-                <Grid className="w-7 h-7 sm:w-8 sm:h-8 text-white stroke-[2.5]" />
+                <Grid className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white stroke-[2.5]" />
                 <span>BÖLÜMLER</span>
               </button>
 
@@ -556,9 +556,9 @@ export default function App() {
                   soundManager.playClick();
                   setIsSettingsOpen(true);
                 }}
-                className="w-full h-14 sm:h-16 rounded-3xl text-white font-black text-xl sm:text-2xl btn-game-blue tracking-wider uppercase cursor-pointer flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-xl"
+                className="w-full h-12 sm:h-14 md:h-16 rounded-2xl sm:rounded-3xl text-white font-black text-lg sm:text-xl md:text-2xl btn-game-blue tracking-wider uppercase cursor-pointer flex items-center justify-center gap-2.5 sm:gap-3 transition-transform active:scale-95 shadow-xl"
               >
-                <Settings className="w-7 h-7 sm:w-8 sm:h-8 text-white stroke-[2.5]" />
+                <Settings className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white stroke-[2.5]" />
                 <span>AYARLAR</span>
               </button>
             </div>

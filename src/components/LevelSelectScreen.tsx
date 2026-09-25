@@ -27,7 +27,7 @@ export const LevelSelectScreen: React.FC<LevelSelectScreenProps> = ({
     : stats.completedLevels || {};
 
   return (
-    <div className="w-full max-w-xl mx-auto flex flex-col justify-between min-h-screen p-3 sm:p-4 text-[#2D3748]">
+    <div className="w-full max-w-xl mx-auto flex flex-col justify-between h-[100dvh] max-h-[100dvh] p-2.5 sm:p-4 text-[#2D3748] overflow-hidden">
       {/* Top Header */}
       <div className="w-full flex items-center justify-between mb-2">
         <button
