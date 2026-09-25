@@ -1,0 +1,7 @@
+{
+  "name": "Renkli Boncuk Dizme Macerası",
+  "description": "Çocuklar için renkli, eğlenceli ve eğitici boncuk dizme ve örüntü tamamlama bulmaca oyunu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

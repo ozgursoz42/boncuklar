@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Fredoka', 'Baloo 2', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    background: #E8DFD8;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Baloo 2', 'Fredoka', cursive, sans-serif;
+  }
+}
+
+/* 3D Scene Perspective Settings */
+.scene-3d-wrapper {
+  perspective: 1200px;
+  perspective-origin: 50% 30%;
+}
+
+.table-surface-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.table-surface-3d.view-3d {
+  transform: rotateX(10deg) translateY(-4px);
+}
+
+.table-surface-3d.view-flat {
+  transform: rotateX(0deg) translateY(0);
+}
+
+/* Extended 20% Larger Realistic Wooden Tabletop Texture */
+.wooden-tabletop {
+  background: 
+    linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.3) 0%, 
+      transparent 15%, 
+      rgba(130, 70, 20, 0.04) 30%, 
+      transparent 50%, 
+      rgba(255, 255, 255, 0.2) 75%, 
+      rgba(100, 50, 10, 0.06) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #FDF7ED 0px,
+      #F7EBD8 45px,
+      #F2E2CA 46px,
+      #FDF7ED 90px
+    );
+  box-shadow: 
+    0 20px 0 #C99A56,
+    0 30px 0 #9E743A,
+    0 45px 45px -10px rgba(60, 30, 10, 0.42),
+    inset 0 3px 6px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 8px rgba(120, 60, 10, 0.2);
+  border-radius: 40px;
+}
+
+/* Table Bevel Edge */
+.table-edge-front {
+  background: linear-gradient(180deg, #DFAC68 0%, #B88241 60%, #8C5C26 100%);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(50, 25, 5, 0.38);
+}
+
+/* 3D Easel Stand Effect for Pattern Card */
+.easel-stand-card {
+  transform-style: preserve-3d;
+  transform: translateZ(24px) rotateX(-4deg);
+  background: linear-gradient(180deg, #FFFDF8 0%, #FFF3DC 100%);
+  box-shadow: 
+    0 10px 0 #D8A55B,
+    0 20px 25px -5px rgba(90, 45, 10, 0.25),
+    inset 0 2px 3px #FFFFFF;
+}
+
+/* 3D Braided Cord with Cylinder Highlight */
+.braided-cord-3d {
+  background: linear-gradient(180deg, #FEF08A 0%, #F59E0B 35%, #D97706 70%, #92400E 100%);
+  box-shadow: 
+    0 4px 6px -1px rgba(120, 53, 15, 0.4),
+    inset 0 2px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px rgba(120, 53, 15, 0.6);
+}
+
+/* Recessed Inset Tray on Table */
+.table-recessed-runner {
+  background: linear-gradient(180deg, #EAD7BE 0%, #F5E9DA 100%);
+  box-shadow: 
+    inset 0 5px 10px rgba(100, 50, 10, 0.25),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.85),
+    0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* 3D Modular Wooden Bead Box with Raised Rim & Visible Depth */
+.wooden-box-unit-3d {
+  transform: translateZ(16px);
+  background: linear-gradient(180deg, #FFF9EF 0%, #F7E4CB 60%, #E8CDA9 100%);
+  border: 3px solid #D8A45E;
+  box-shadow: 
+    0 10px 0 #BD8744,
+    0 16px 20px -3px rgba(90, 45, 10, 0.28),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 4px rgba(120, 60, 10, 0.15);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+}
+
+.wooden-box-unit-3d:hover {
+  transform: translateZ(24px) translateY(-3px);
+  box-shadow: 
+    0 14px 0 #BD8744,
+    0 22px 26px -3px rgba(90, 45, 10, 0.35),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95);
+}
+
+/* Deep Wooden Interior Dish Bowl inside the Box */
+.table-bowl-deep-3d {
+  background: radial-gradient(circle at 45% 30%, #FFFFFF 0%, #F3E0C5 45%, #D6B284 85%, #B88950 100%);
+  box-shadow: 
+    inset 0 6px 10px rgba(90, 40, 5, 0.35),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.8),
+    0 2px 3px rgba(255, 255, 255, 0.9);
+}
+
+/* Flying Bead Trajectory Animation */
+@keyframes fly-to-slot {
+  0% {
+    transform: scale(1) translate(0, 0);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+  40% {
+    transform: scale(1.35) translate(calc(var(--fly-x) * 0.4), calc(var(--fly-y) * 0.4 - 60px));
+    filter: drop-shadow(0 18px 24px rgba(245, 158, 11, 0.6));
+  }
+  100% {
+    transform: scale(1) translate(var(--fly-x), var(--fly-y));
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  }
+}
+
+.animate-fly-bead {
+  animation: fly-to-slot 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Sparkling Animation Keyframes */
+@keyframes sparkle-burst {
+  0% { transform: scale(0.2) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.4) rotate(45deg); opacity: 0.95; }
+  100% { transform: scale(1.8) rotate(90deg); opacity: 0; }
+}
+
+@keyframes ring-glow {
+  0% { transform: scale(0.4); opacity: 1; box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.95); }
+  100% { transform: scale(1.7); opacity: 0; box-shadow: 0 0 28px 14px rgba(251, 191, 36, 0); }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  70% { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-6deg); }
+  40% { transform: rotate(6deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(4deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(245, 158, 11, 0.8)); }
+  50% { filter: drop-shadow(0 0 16px rgba(245, 158, 11, 1)); }
+}
+
+.animate-sparkle-burst {
+  animation: sparkle-burst 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-ring-glow {
+  animation: ring-glow 0.65s ease-out forwards;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s infinite;
+}
+
+.animate-gentle-bounce {
+  animation: gentle-bounce 2.2s ease-in-out infinite;
+}
+
+/* 3D Toy Button Styles */
+.btn-game-green {
+  background: linear-gradient(180deg, #4ADE80 0%, #22C55E 60%, #16A34A 100%);
+  box-shadow: 0 6px 0 #15803D, 0 12px 18px -2px rgba(22, 163, 74, 0.45);
+  border-top: 2px solid rgba(255,255,255,0.6);
+}
+.btn-game-green:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #15803D, 0 6px 10px -2px rgba(22, 163, 74, 0.45);
+}
+
+.btn-game-yellow {
+  background: linear-gradient(180deg, #FDE047 0%, #F59E0B 60%, #D97706 100%);
+  box-shadow: 0 6px 0 #B45309, 0 12px 18px -2px rgba(217, 119, 6, 0.45);
+  border-top: 2px solid rgba(255,255,255,0.6);
+}
+.btn-game-yellow:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #B45309, 0 6px 10px -2px rgba(217, 119, 6, 0.45);
+}
+
+.btn-game-purple {
+  background: linear-gradient(180deg, #C084FC 0%, #9333EA 60%, #7E22CE 100%);
+  box-shadow: 0 6px 0 #581C87, 0 12px 18px -2px rgba(126, 34, 206, 0.45);
+  border-top: 2px solid rgba(255,255,255,0.6);
+}
+.btn-game-purple:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #581C87, 0 6px 10px -2px rgba(126, 34, 206, 0.45);
+}
+
+.btn-game-pink {
+  background: linear-gradient(180deg, #F472B6 0%, #EC4899 60%, #DB2777 100%);
+  box-shadow: 0 6px 0 #9D174D, 0 12px 18px -2px rgba(219, 39, 119, 0.45);
+  border-top: 2px solid rgba(255,255,255,0.6);
+}
+.btn-game-pink:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #9D174D, 0 6px 10px -2px rgba(219, 39, 119, 0.45);
+}
+
+.btn-game-blue {
+  background: linear-gradient(180deg, #38BDF8 0%, #0284C7 60%, #0369A1 100%);
+  box-shadow: 0 6px 0 #075985, 0 12px 18px -2px rgba(3, 105, 161, 0.45);
+  border-top: 2px solid rgba(255,255,255,0.6);
+}
+.btn-game-blue:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #075985, 0 6px 10px -2px rgba(3, 105, 161, 0.45);
+}
+
+/* 3D Pixar Handwritten Title with Pure White Shadow & Gradient Fill */
+.title-pixar-handwritten-3d {
+  font-family: 'Pacifico', 'Baloo 2', cursive, sans-serif;
+  font-weight: 400;
+  background: linear-gradient(135deg, #FF007A 0%, #FF8A00 35%, #FFDD00 70%, #00E5FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.15em 0.2em;
+  /* Pure white 3D layer & bright white halo — NO black shadows */
+  filter: drop-shadow(0px 3px 0px #FFFFFF)
+          drop-shadow(0px 6px 0px #FFFFFF)
+          drop-shadow(0px 0px 22px rgba(255, 255, 255, 1));
+}
